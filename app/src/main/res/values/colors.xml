@@ -13,4 +13,17 @@
     <color name="lavender">#C197D2</color>
     <color name="mauve">#D3B1C2</color>
 
+    <color name="turcoaz">#007f97</color>
+    <color name="grey">#a4bcbc</color>
+    <color name="violet">#7c587f</color>
+    <color name="mov">#4c3f77</color>
+    <color name="blackish">#051126</color>
+
+    <color name="whiteish">#cdf5db</color>
+    <color name="light_teal">#8bd1d3</color>
+    <color name="light_mov">#c0aec4</color>
+    <color name="fuchsia">#96439d</color>
+    <color name="lilac">#390164</color>
+
+
 </resources>
