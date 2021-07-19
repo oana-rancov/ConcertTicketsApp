@@ -7,20 +7,33 @@ import android.os.Bundle;
 import android.os.Handler;
 
 public class SplashActivity extends AppCompatActivity {
-    private static int SPLASH_TIMEOUT = 2000;
+    private Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent homeIntent = new Intent(SplashActivity.this, MainActivity.class);
-                startActivity(homeIntent);
+    }
+
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            if(!isFinishing()){
+                startActivity(new Intent(getApplicationContext(), MainScreen.class));
                 finish();
             }
-        }, 2000);
+        }
+    };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        handler.postDelayed(runnable,200);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        handler.removeCallbacks(runnable);
     }
 }

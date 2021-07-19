@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ConcertTickets">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".SplashActivity"
-            android:theme="@style/MyAppStyle">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".MainScreen" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

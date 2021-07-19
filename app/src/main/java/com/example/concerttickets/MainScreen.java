@@ -28,7 +28,7 @@ public class MainScreen extends AppCompatActivity {
         binding = ActivityMainScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.appBarMainScreen.toolbar);
+        //setSupportActionBar(binding.appBarMainScreen.toolbar);
         binding.appBarMainScreen.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
