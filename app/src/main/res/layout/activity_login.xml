@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register.LoginActivity"
+    android:orientation="vertical"
+    android:background="@drawable/gradient2">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login User"
+        android:textStyle="bold"
+        android:textColor="@color/lilac"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:textSize="@dimen/medium_size"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin_medium_size"/>
+
+    <EditText
+        android:id="@+id/loginUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium_size"
+        android:hint="Username" />
+
+    <EditText
+        android:id="@+id/loginPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium_size"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium_size"
+        android:text="Log In"
+        android:backgroundTint="@color/fuchsia"/>
+
+</LinearLayout>
