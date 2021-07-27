@@ -12,7 +12,10 @@ import android.widget.Toast;
 
 import com.example.concerttickets.R;
 
+import java.util.ArrayList;
+
 public class RegisterActivity extends AppCompatActivity {
+
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private EditText email, password, name;
     private Button register;
@@ -30,11 +33,12 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "Id = " + email.getText() + "\nPass = " + password.getText() + "\nName = " + name.getText());
                 UserEntity userEntity= new UserEntity();
                 userEntity.setUserID(email.getText().toString());
                 userEntity.setPassword(password.getText().toString());
                 userEntity.setName(name.getText().toString());
+                Log.d(TAG, "Id = " + email.getText() + "\nPass = " + password.getText() + "\nName = " + name.getText());
+
 
                 if(validateInput(userEntity)){
                     UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
