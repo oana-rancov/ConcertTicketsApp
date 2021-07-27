@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="small_small_size">18sp</dimen>
     <dimen name="small_size">24sp</dimen>
     <dimen name="medium_size">32sp</dimen>
     <dimen name="margin_small_small_size">5dp</dimen>

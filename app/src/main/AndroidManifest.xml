@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ConcertTickets">
-        <activity android:name=".register.LoginActivity"></activity>
+        <activity android:name=".RecyclerActivity"></activity>
+        <activity android:name=".register.LoginActivity" />
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MainScreen" />
