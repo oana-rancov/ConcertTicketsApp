@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_medium_size"
-        android:hint="UserId" />
+        android:hint="Email" />
 
     <EditText
         android:id="@+id/registerPassword"

@@ -1,4 +1,4 @@
-package com.example.concerttickets.ui.slideshow;
+package com.example.concerttickets.ui.contact;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,30 +12,31 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.concerttickets.R;
-import com.example.concerttickets.databinding.FragmentSlideshowBinding;
+import com.example.concerttickets.databinding.FragmentContactBinding;
 
-public class SlideshowFragment extends Fragment {
+public class ContactFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
-    private FragmentSlideshowBinding binding;
+    private ContactViewModel contactViewModel;
+    private FragmentContactBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        contactViewModel =
+                new ViewModelProvider(this).get(ContactViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentContactBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textContact;
+        contactViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
         });
         return root;
+
+
     }
 
     @Override

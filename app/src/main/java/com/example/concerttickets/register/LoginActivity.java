@@ -15,32 +15,33 @@ import com.example.concerttickets.R;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = LoginActivity.class.getSimpleName();
-    private EditText userEmail;
+    private EditText email;
     private EditText password;
     private Button loginButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        userEmail = findViewById(R.id.loginUsername);
+        email = findViewById(R.id.loginUsername);
         password = findViewById(R.id.loginPassword);
         loginButton = findViewById(R.id.btLogin);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "EMAIL= " + userEmail.getText() + "\nPASS= " + password.getText());
+                Log.d(TAG, "EMAIL= " + email.getText() + "\nPASS= " + password.getText());
 
-                String textEmail = userEmail.getText().toString();
+                String textEmail = email.getText().toString();
                 String textPass = password.getText().toString();
 
                 //atentionare cand nu ai completat emailul
                 if(textEmail.isEmpty()){
-                    userEmail.setError("This field should not be empty!");
+                    email.setError("This field should not be empty!");
                 }else{
-                    userEmail.setError(null); //ca sa nu mai apara nici semnul rosu
+                    email.setError(null); //ca sa nu mai apara nici semnul rosu
                 }
 
                 //atentionare cand nu ai completat parola
@@ -82,8 +83,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
     }
+
 
 
 }
