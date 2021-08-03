@@ -112,6 +112,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
+    //check fields to be filled
     private Boolean validateInput(UserEntity userEntity){
         if (userEntity.getName().isEmpty() ||
             userEntity.getPassword().isEmpty() ||
@@ -131,6 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onPause();
     }
 
+    //saving user name from register
     private void saveUserNameInSharedPref(){
         SharedPreferences sharedPreferences = this.getSharedPreferences(USER_LOCAL_STORE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -138,6 +140,7 @@ public class RegisterActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    //saving user email from register
     private void saveUserEmailInSharedPref() {
         SharedPreferences sharedPreferences = this.getSharedPreferences(USER_LOCAL_STORE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -145,43 +148,5 @@ public class RegisterActivity extends AppCompatActivity {
         editor.apply();
     }
 
-
-
-    private SharedPreferences sharedPref;
-    private static String PREF_STRING = "pref_value";
-
-    // method to store value in sharedPreferences
-    public void login(String username_params, String email_params)
-    {
-        // initialize the sharePreferences
-        sharedPref = getApplicationContext().getSharedPreferences(PREF_STRING,0);
-        // use the editor to save the data
-        SharedPreferences.Editor editor = sharedPref.edit();
-        // add data to sharedPreferences using put() method
-
-        editor.putString("username",username_params);
-        editor.putString("email",email_params);
-
-        // only this won't save your data to preferences, we need to commit this transaction
-        editor.commit(); // only after commit() data is saved in sharedPreferences
-    }
-
-    public void getDataFromPrefernces()
-    {
-        // initialize the sharePreferences
-        SharedPreferences preferences = getApplicationContext().getSharedPreferences(PREF_STRING,0);
-        // use the editor to retrieve the data
-        SharedPreferences.Editor editor = preferences.edit();
-
-        // here we save the sharedpreference values to string variables
-        String username = preferences.getString("username","");
-        // make sureyou donot mismatch the name of the key/ it must be same with that youstored
-        String email = preferences.getString("email","");
-
-        // again to get data we need to commit()
-        editor.commit();
-
-        // you can use these values from string variables wherever you need
-    }
 
 }

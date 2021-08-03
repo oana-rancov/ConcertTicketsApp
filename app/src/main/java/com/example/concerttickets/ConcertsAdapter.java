@@ -17,9 +17,7 @@ public class ConcertsAdapter extends RecyclerView.Adapter<ConcertsAdapter.Concer
     private List<DataSource.Concerts> concertsList;
 
     //constructor
-    ConcertsAdapter(List<DataSource.Concerts> concertsList){
-        this.concertsList = concertsList;
-    }
+    public ConcertsAdapter(List<DataSource.Concerts> concertsList){ this.concertsList = concertsList; }
 
 
     @NonNull
