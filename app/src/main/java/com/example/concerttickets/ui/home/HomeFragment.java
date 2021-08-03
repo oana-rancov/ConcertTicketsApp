@@ -1,6 +1,5 @@
 package com.example.concerttickets.ui.home;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,13 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.concerttickets.ConcertsAdapter;
 import com.example.concerttickets.DataSource;
-import com.example.concerttickets.MainScreen;
 import com.example.concerttickets.R;
-import com.example.concerttickets.RecyclerActivity;
 import com.example.concerttickets.databinding.FragmentHomeBinding;
-import com.example.concerttickets.register.LoginActivity;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
