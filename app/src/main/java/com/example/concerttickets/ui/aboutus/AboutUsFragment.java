@@ -35,6 +35,7 @@ public class AboutUsFragment extends Fragment {
             }
         });
         return root;
+
     }
 
     @Override

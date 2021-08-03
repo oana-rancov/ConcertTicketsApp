@@ -1,5 +1,6 @@
 package com.example.concerttickets.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +12,20 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.concerttickets.ConcertsAdapter;
+import com.example.concerttickets.DataSource;
+import com.example.concerttickets.MainScreen;
 import com.example.concerttickets.R;
+import com.example.concerttickets.RecyclerActivity;
 import com.example.concerttickets.databinding.FragmentHomeBinding;
+import com.example.concerttickets.register.LoginActivity;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
@@ -35,6 +47,22 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        //define data source for recyclerview
+        DataSource dataSource = new DataSource();
+        List<DataSource.Concerts> concertsList = dataSource.getConcerts();
+
+        RecyclerView concertListRecycler = (RecyclerView) root.findViewById(R.id.rvConcertList);
+
+        //definelayoutManager for recycler
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        concertListRecycler.setLayoutManager(linearLayoutManager);
+
+        //now the last step: create the Adapter
+        //define photo list
+        ConcertsAdapter concertsAdapter = new ConcertsAdapter(concertsList);
+        concertListRecycler.setAdapter(concertsAdapter);
+
         return root;
 
     }

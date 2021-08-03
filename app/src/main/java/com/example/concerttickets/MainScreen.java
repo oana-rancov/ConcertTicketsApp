@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -30,6 +31,7 @@ public class MainScreen extends AppCompatActivity {
     private static final String USER_LOCAL_STORE = "user_local_store"; //key -> numele fis xml
     private static final String USER_NAME = "user_name"; //key
     private static final String USER_EMAIL = "user_email"; //key
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +66,6 @@ public class MainScreen extends AppCompatActivity {
         View header = navigationView.getHeaderView(0);
         TextView userName = (TextView) header.findViewById(R.id.tvFullName);
         TextView userEmail = (TextView) header.findViewById(R.id.tvEmailAddress);
-//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplication());
-//        String user_name = sharedPreferences.getString("user_name", "");
-//        String user_email = sharedPreferences.getString("user_email","");
         userName.setText(getUserNameFromSharedPref());
         userEmail.setText(getUserEmailFromSharedPref());
 

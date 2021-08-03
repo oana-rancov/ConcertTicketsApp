@@ -14,12 +14,18 @@
     <fragment
         android:id="@+id/nav_aboutus"
         android:name="com.example.concerttickets.ui.aboutus.AboutUsFragment"
-        android:label="@string/menu_gallery"
+        android:label="AboutUs"
         tools:layout="@layout/fragment_aboutus" />
 
     <fragment
         android:id="@+id/nav_contact"
         android:name="com.example.concerttickets.ui.contact.ContactFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Contact"
         tools:layout="@layout/fragment_contact" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.example.concerttickets.ui.share.ShareFragment"
+        android:label="Share"
+        tools:layout="@layout/fragment_share" />
 </navigation>
