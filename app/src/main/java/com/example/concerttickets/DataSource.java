@@ -6,10 +6,15 @@ import java.util.List;
 public class DataSource {
 
     public class Concerts {
+        private int image;
         private String artistName;
         private String location;
         private String date;
         private String time;
+
+        public int getImage(){ return image; }
+
+        public void setImage(int image){ this.image = image; }
 
         public String getArtistName() {
             return artistName;
