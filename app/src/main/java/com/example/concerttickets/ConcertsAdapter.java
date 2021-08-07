@@ -45,29 +45,18 @@ public class ConcertsAdapter extends RecyclerView.Adapter<ConcertsAdapter.Concer
 
     @Override
     public void onBindViewHolder(@NonNull ConcertsAdapter.ConcertsViewHolder holder, int position) {
-        // seteaza informatia pe view
-        // seteaza datele pe item-ul respectiv, functioneaza ca un for
-        // adica pt fieacre item din lista se apeleaza si se seteaza datele
-//        String photo = photoList.get(position);
-//        String photoNr = String.valueOf(position);
-//        holder.photo.setText(photo);
-//        holder.photoNr.setText(photoNr);
 
+        int image = concertsList.get(position).getImage();
         String artistName = concertsList.get(position).getArtistName();
         String location = concertsList.get(position).getLocation();
         String date = concertsList.get(position).getDate();
         String time = concertsList.get(position).getTime();
+        holder.image.setImageResource(image);
         holder.artistName.setText(artistName);
         holder.location.setText(location);
         holder.date.setText(date);
         holder.time.setText(time);
 
-
-        if(position == 1) {
-            holder.image.setImageResource(R.drawable.ic_launcher_foreground);
-        }else{
-            holder.image.setVisibility(View.GONE);
-        }
 
         /*
         holder.photo.setOnClickListener(new View.OnClickListener() {
@@ -117,6 +106,7 @@ public class ConcertsAdapter extends RecyclerView.Adapter<ConcertsAdapter.Concer
                     }
                 }
             });
+
         }
     }
 
