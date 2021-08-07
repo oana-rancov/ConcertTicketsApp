@@ -30,7 +30,7 @@
         android:id="@+id/rvConcertList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/margin_medium_size"
+        android:layout_margin="5dp"
         tools:listitem="@layout/item_concert" />
 
 </LinearLayout>
