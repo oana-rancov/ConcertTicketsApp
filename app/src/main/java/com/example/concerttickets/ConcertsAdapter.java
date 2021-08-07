@@ -16,6 +16,19 @@ public class ConcertsAdapter extends RecyclerView.Adapter<ConcertsAdapter.Concer
     private static final String TAG = DataSource.Concerts.class.getSimpleName();
     private List<DataSource.Concerts> concertsList;
 
+    //for clicking on cardview
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClcikListener(OnItemClickListener listener) {
+        mListener = listener;
+    } //clicking cardview
+
+
+
     //constructor
     public ConcertsAdapter(List<DataSource.Concerts> concertsList){ this.concertsList = concertsList; }
 
@@ -27,7 +40,7 @@ public class ConcertsAdapter extends RecyclerView.Adapter<ConcertsAdapter.Concer
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View recyclerView = layoutInflater.inflate(R.layout.item_concert, parent, false );
 
-        return new ConcertsViewHolder(recyclerView);
+        return new ConcertsViewHolder(recyclerView, mListener); //mListener for clicking cardview
     }
 
     @Override
@@ -84,13 +97,26 @@ public class ConcertsAdapter extends RecyclerView.Adapter<ConcertsAdapter.Concer
         TextView date;
         TextView time;
 
-        public ConcertsViewHolder(View itemView){
+        public ConcertsViewHolder(View itemView, final OnItemClickListener listener){
             super(itemView);
             image = itemView.findViewById(R.id.image);
             artistName = itemView.findViewById(R.id.tvArtistName);
             location = itemView.findViewById(R.id.tvLocation);
             date = itemView.findViewById(R.id.tvDate);
             time = itemView.findViewById(R.id.tvTime);
+
+            //for clicking cardview, and so is listener(parameter)
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 
